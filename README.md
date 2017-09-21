@@ -153,9 +153,10 @@ or
 ```php
 try {
     /**pass response obj as an array**/
-$getDescription = OpenGraph::getDescription(json_decode($my_data)->response, true);
 
-print_r($getDescription);
+    $getDescription = OpenGraph::getDescription(json_decode($my_data)->response, true);
+
+    print_r($getDescription);
 
 } catch(Exception $e) {
 
