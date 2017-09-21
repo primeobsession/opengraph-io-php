@@ -4,6 +4,7 @@ Opengraph php package is a wrapper on opengraph specially build for php projects
 * Autoload the package at the top of your php file :
 ```php
 /**Autoload files using Composer autoload @ top of your php file where you want to use library*/
+
 require_once __DIR__ . '/../vendor/autoload.php'; 
 
 use OpenGraph\OpenGraph;
@@ -169,10 +170,10 @@ try {
 /**as a json**/
 
 $getImage = OpenGraph::getImage(json_encode(json_decode($my_data)->response));
-
-
+```
+or
+```php
 /**as an array**/
-
 
 $getImageArr = OpenGraph::getImage(json_decode($my_data)->response, true);
 
