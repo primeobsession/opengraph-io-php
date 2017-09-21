@@ -1,8 +1,7 @@
-[20-Sep-2017 23:05:06 Asia/Calcutta] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /var/www/html/opengraph-io/tests/index.php on line 4
-[20-Sep-2017 23:05:06 Asia/Calcutta] PHP Notice:  Use of undefined constant API_KEY - assumed 'API_KEY' in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 20
-[20-Sep-2017 23:05:11 Asia/Calcutta] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /var/www/html/opengraph-io/tests/index.php on line 4
-[20-Sep-2017 23:05:19 Asia/Calcutta] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /var/www/html/opengraph-io/tests/index.php on line 4
-[20-Sep-2017 23:08:10 Asia/Calcutta] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /var/www/html/opengraph-io/tests/index.php on line 4
-[20-Sep-2017 23:08:10 Asia/Calcutta] PHP Notice:  Use of undefined constant API_KEY - assumed 'API_KEY' in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 20
-[20-Sep-2017 23:09:21 Asia/Calcutta] PHP Warning:  The use statement with non-compound name 'Exception' has no effect in /var/www/html/opengraph-io/tests/index.php on line 4
-[20-Sep-2017 23:09:21 Asia/Calcutta] PHP Notice:  Use of undefined constant API_KEY - assumed 'API_KEY' in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 20
+[21-Sep-2017 18:25:30 Asia/Calcutta] PHP Notice:  Trying to get property of non-object in /var/www/html/opengraph-io/tests/index.php on line 8
+[21-Sep-2017 18:26:08 Asia/Calcutta] PHP Notice:  Trying to get property of non-object in /var/www/html/opengraph-io/tests/index.php on line 8
+[21-Sep-2017 18:30:44 Asia/Calcutta] PHP Notice:  Trying to get property of non-object in /var/www/html/opengraph-io/tests/index.php on line 8
+[21-Sep-2017 18:34:35 Asia/Calcutta] PHP Notice:  Array to string conversion in /var/www/html/opengraph-io/tests/index.php on line 8
+[21-Sep-2017 18:55:11 Asia/Calcutta] PHP Notice:  Undefined index: image in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 163
+[21-Sep-2017 18:55:11 Asia/Calcutta] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 163
+[21-Sep-2017 19:04:27 Asia/Calcutta] PHP Warning:  json_decode() expects parameter 1 to be string, object given in /var/www/html/opengraph-io/src/OpenGraph/OpenGraph.php on line 128
