@@ -144,18 +144,20 @@ try {
 
     print_r($getDescription);
 
-}   catch(Exception $e){
+} catch(Exception $e) {
 
         echo $e->getMessage();
 }
+```
 or
+```php
 try {
     /**pass response obj as an array**/
 $getDescription = OpenGraph::getDescription(json_decode($my_data)->response, true);
 
 print_r($getDescription);
 
-}catch(Exception $e){
+} catch(Exception $e) {
 
     echo $e->getMessage();
 
@@ -174,8 +176,3 @@ $getImage = OpenGraph::getImage(json_encode(json_decode($my_data)->response));
 $getImageArr = OpenGraph::getImage(json_decode($my_data)->response, true);
 
 ```
-
-
-
-
-
