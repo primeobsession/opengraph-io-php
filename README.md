@@ -3,7 +3,7 @@ Opengraph php package is a wrapper on opengraph specially build for php projects
 ## Usage 
 * Autoload the package at the top of your php file :
 ```php
-/**Autoload files using Composer autoload @ top of your php file where you want to use library*/
+/* Autoload files using Composer autoload @ top of your php file where you want to use library */
 
 require_once __DIR__ . '/../vendor/autoload.php'; 
 
@@ -29,7 +29,7 @@ try {
 | full_render | no |    This will fully render the site using a chrome browser before parsing its contents. This is especially helpful for single page applications and JS redirects. This will slow down the time it takes to get a response by around 1.5 seconds. |
 
 ```php
-/** cache_ok true third parameter as well as full_render is true fourth parameter both are optional**/
+/* cache_ok true third parameter as well as full_render is true fourth parameter both are optional */
 try {
 
     $obj = new OpenGraph('XXXXXXXXX(api_key)', 'https://some-site.com', true, true);
@@ -41,7 +41,7 @@ try {
 }
 ```
 ```php
-/**fetch data**/
+/* fetch data */
 
 $my_data = OpenGraph::scrapSiteContents();
 
@@ -119,18 +119,18 @@ print_r($my_data);
 here response keyowrd in that json object holds the actual output.
 * Several other methods which can make your life easy 
 ```php
-/**get the site title**/
+/* get the site title */
 
 $getTitle = OpenGraph::getTitle(json_encode(json_decode($my_data)->response));
 
 ```
 `NOTE : If you want you can the response obj as json as well as array`
 ```php
-/** as json **/
+/* as json */
 
 $getTitle = OpenGraph::getTitle(json_encode(json_decode($my_data)->response));
 
-/** as array **/
+/* as array */
 
 $getTitle =  OpenGraph::getTitle(json_decode($my_data)->response, true);
 
@@ -139,7 +139,7 @@ $getTitle =  OpenGraph::getTitle(json_decode($my_data)->response, true);
 ### Get Site Description :
 ```php
 try {
-    /**pass response obj as an json**/
+    /* pass response obj as an json */
 
     $getDescription = OpenGraph::getDescription(json_encode(json_decode($my_data)->response));
 
@@ -147,13 +147,13 @@ try {
 
 } catch(Exception $e) {
 
-        echo $e->getMessage();
+    echo $e->getMessage();
 }
 ```
 or
 ```php
 try {
-    /**pass response obj as an array**/
+    /* pass response obj as an array */
 
     $getDescription = OpenGraph::getDescription(json_decode($my_data)->response, true);
 
@@ -167,13 +167,13 @@ try {
 ```
 ### Get Image Logo :
 ```php
-/**as a json**/
+/* as a json */
 
 $getImage = OpenGraph::getImage(json_encode(json_decode($my_data)->response));
 ```
 or
 ```php
-/**as an array**/
+/* as an array */
 
 $getImageArr = OpenGraph::getImage(json_decode($my_data)->response, true);
 
