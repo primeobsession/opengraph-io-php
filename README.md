@@ -33,8 +33,10 @@ This package is in active development and not discoverable by Composer via [Pack
 4. Now you should be able to access `OpenGraphClient` using proper namespace
     ```php
     use OpenGraph\OpenGraphClient;
- 
-    $og = new OpenGraphClient('123456789');
+     
+    define('OG_API_KEY', 'XXXXXXXXX');
+     
+    $og = new OpenGraphClient(OG_API_KEY);
     ```
 
 * After releasing this package to Packagist you will be able to require it as following
@@ -51,6 +53,10 @@ This package is in active development and not discoverable by Composer via [Pack
         },
         ...
     }
+    ```
+    and the updating composer dependencies
+    ```bash
+    $ composer update
     ```
 
 ## Usage 
@@ -74,7 +80,7 @@ try {
 
 | Parameters | Type | Required | Default | Description |
 |:----------:|:----:|:--------:|:-------:|:-----------:|
-| app_id | string | yes | null |The API key for registered users.  Create an account (no cc ever required) to receive your app_id. |
+| app_id | string | yes | null |The API key for registered users.  Create an account (no cc ever required) to receive your app_id(OG_API_KEY). |
 | cache_ok | boolean | no | false |This will force our servers to pull a fresh version of the site being requested. This can significantly slow down the time it takes to get a response. |
 | full_render | boolean | no | false |This will fully render the site using a chrome browser before parsing its contents. This is especially helpful for single page applications and JS redirects. This will slow down the time it takes to get a response by around 1.5 seconds. |
 
@@ -82,7 +88,7 @@ try {
 define('OG_API_KEY', 'XXXXXXXXX');
  
 try {
-    $og = new OpenGraph\OpenGraphClient(OG_API_KEY, true, true);
+    $og = new OpenGraph\OpenGraphClient(OG_API_KEY, true, true); // app_id = 'XXXXXXXXX', cache_ok = true, full_render = true
 } catch (\OpenGraph\OpenGraphException $e) {
     echo $e->getMessage();
 }
@@ -93,7 +99,7 @@ define('OG_API_KEY', 'XXXXXXXXX');
  
 try {
     $og = new OpenGraph\OpenGraphClient(OG_API_KEY, true, true);
-    $response = $og->fetch('https://example.com');
+    $response = $og->fetch('https://www.opengraph.io');
     echo '<pre>';
     var_dump($response);
 } catch (\OpenGraph\OpenGraphException $e) {
@@ -162,7 +168,7 @@ object(OpenGraph\OpenGraphResponse)[4]
  * N.B. OpenGraph Response return you back an implementaion of `OpenGraphResponse` object if you wish to get all data as an array just append `toArray()` method after your response as following.
 ```php
 ...
-    var_dump($ogResponse->toArray());
+    var_dump($response->toArray());
 ...
 ```
 * Now you will get an array like following
@@ -227,20 +233,20 @@ array (size=11)
 ### Get Site Description
 ```php
 ...
-    var_dump($ogResponse->hybridGraph->description);
+    var_dump($response->hybridGraph->description);
 ...
 ```
 
 ### Get Site Logo
 ```php
 ...
-    var_dump($ogResponse->hybridGraph->image);
+    var_dump($response->hybridGraph->image);
 ...
 ```
 
 ### Get Site Title
 ```php
 ...
-    var_dump($ogResponse->hybridGraph->title);
+    var_dump($response->hybridGraph->title);
 ...
 ```
