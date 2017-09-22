@@ -36,6 +36,10 @@ class OpenGraphRequest
                     /* Check response is JSON or not */
                     if ($this->isJson($response)) {
                         curl_close($cURL);
+                        $decodedMessage = json_decode($response);
+                        if ($decodedMessage->error->code == 101 && $decodedMessage->error->message == 'Invalid API Key')
+                            throw new OpenGraphException("You have provided an invalid API key.");
+                        else
                             return new OpenGraphResponse(json_decode($response));
                     } else {
                         curl_close($cURL);

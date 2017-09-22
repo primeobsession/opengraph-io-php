@@ -47,23 +47,27 @@ class OpenGraphClient
     function __construct($api_key_usr = null, $cache_ok = false, $full_render = false, $api_version = null)
     {
         if (strlen($api_key_usr)) {
-            define('API_KEY', $api_key_usr);
+            if (! defined('API_KEY'))
+                define('API_KEY', $api_key_usr);
             if ($cache_ok == 1 || strlen($cache_ok)) {
-                if (gettype($cache_ok) == "boolean") {
-                    define('CACHE_OK', true);
+                if (gettype($cache_ok) === "boolean") {
+                    if (! defined('CACHE_OK'))
+                        define('CACHE_OK', true);
                 } else {
                     throw new OpenGraphException("Cache OK type should be of boolean type.");
                 }
             }
             if ($full_render == 1 || strlen($full_render)) {
-                if (gettype($full_render) == "boolean") {
-                    define('FULL_RENDER', true);
+                if (gettype($full_render) === "boolean") {
+                    if (! defined('FULL_RENDER'))
+                        define('FULL_RENDER', true);
                 } else {
                     throw new OpenGraphException("Full render type should be of boolean type.");
                 }
             }
+            /* If $api_version == false then, $api_version will fallback to default version 1.1 */
             if (strlen($api_version)) {
-                if (gettype($api_version) == 'string') {
+                if (gettype($api_version) === 'string') {
                     $this->api_version = $api_version;
                 } else {
                     throw new OpenGraphException("API version type should be of string type.");
@@ -83,9 +87,12 @@ class OpenGraphClient
      */
     public function fetch($site_url) {
         if (strlen($site_url) && gettype($site_url) == 'string') {
-            define('SITE_URL', $site_url);
+            if (! defined('SITE_URL'))
+                define('SITE_URL', $site_url);
 
+            /* To unit test formUrl comment first return statement and uncomment last comment statement */
             return (new OpenGraphRequest())->request($this->formUrl());
+            // return $this->formUrl();
         } else {
             throw new OpenGraphException("Missing required param Site URL.");
         }

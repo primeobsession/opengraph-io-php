@@ -5,13 +5,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use OpenGraph\OpenGraphClient;
 use OpenGraph\OpenGraphException;
 
-define('OG_API_KEY', 'XXXXXXXXXX');
+define('OG_API_KEY', '59c287211eb31e457760e00c');
 
 try {
     $og = new OpenGraphClient(OG_API_KEY);
     $ogResponse = $og->fetch('https://opengraph.io');
     echo '<pre>';
-    var_dump($ogResponse->toArray());
+    var_dump($ogResponse);
 } catch (OpenGraphException $openGraphException) {
     echo $openGraphException->getMessage();
 }

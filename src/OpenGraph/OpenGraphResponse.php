@@ -101,17 +101,17 @@ class OpenGraphResponse implements Arrayfier
      */
     public function __construct($response)
     {
-        $this->_id = $response->_id;
-        $this->_v = $response->_v;
-        $this->url = $response->url;
-        $this->hybridGraph = new HybridGraph($response->hybridGraph);
-        $this->openGraph = new OpenGraph($response->openGraph);
-        $this->htmlInferred = new HtmlInferred($response->htmlInferred);
-        $this->requestInfo = new RequestInfo($response->requestInfo);
-        $this->accessed = $response->accessed;
-        $this->updated = new DateTime($response->updated);
-        $this->created = new DateTime($response->created);
-        $this->version = $response->version;
+        $this->_id = $response->_id ? $response->_id : null;
+        $this->_v = $response->_v ? $response->_v : null;
+        $this->url = $response->url ? $response->url : null;
+        $this->hybridGraph = $response->hybridGraph ? new HybridGraph($response->hybridGraph) : null;
+        $this->openGraph = $response->openGraph ? new OpenGraph($response->openGraph) : null;
+        $this->htmlInferred = $response->htmlInferred ? new HtmlInferred($response->htmlInferred) : null;
+        $this->requestInfo = $response->requestInfo ? new RequestInfo($response->requestInfo) : null;
+        $this->accessed = $response->accessed ? $response->accessed : null;
+        $this->updated = $response->updated ? new DateTime($response->updated) : null;
+        $this->created = $response->created ? new DateTime($response->created) : null;
+        $this->version = $response->version ? $response->version : null;
 
         return $this;
     }
