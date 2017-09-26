@@ -36,8 +36,8 @@ class RequestInfo implements Arrayfier
      */
     public function __construct($requestInfo)
     {
-        $this->redirects = $requestInfo->redirects;
-        $this->host = $requestInfo->host;
+        $this->redirects = property_exists($requestInfo, 'redirects') ? $requestInfo->redirects : null;
+        $this->host = property_exists($requestInfo, 'host') ? $requestInfo->host : null;
 
         return $this;
     }
