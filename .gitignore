@@ -1,4 +1,4 @@
 .idea/
 .phpintel/
 /vendor/
-/src/.error.log
+/src/error.log

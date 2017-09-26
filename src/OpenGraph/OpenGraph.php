@@ -78,14 +78,14 @@ class OpenGraph implements Arrayfier
      */
     public function __construct($openGraph)
     {
-        $this->error = $openGraph->error;
-        $this->title = $openGraph->title;
-        $this->type = $openGraph->type;
-        $this->admins = $openGraph->admins;
-        $this->site_name = $openGraph->site_name;
-        $this->image = $openGraph->image;
-        $this->url = $openGraph->url;
-        $this->description = $openGraph->description;
+        $this->error = property_exists($openGraph, 'error') ? $openGraph->error : null;
+        $this->title = property_exists($openGraph, 'title') ? $openGraph->title : null;
+        $this->type = property_exists($openGraph, 'type') ? $openGraph->type : null;
+        $this->admins = property_exists($openGraph, 'admins') ? $openGraph->admins : null;
+        $this->site_name = property_exists($openGraph, 'site_name') ? $openGraph->site_name : null;
+        $this->image = property_exists($openGraph, 'image') ? $openGraph->image : null;
+        $this->url = property_exists($openGraph, 'url') ? $openGraph->url : null;
+        $this->description = property_exists($openGraph, 'description') ? $openGraph->description : null;
 
         return $this;
     }

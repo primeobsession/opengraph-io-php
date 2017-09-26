@@ -101,17 +101,20 @@ class OpenGraphResponse implements Arrayfier
      */
     public function __construct($response)
     {
-        $this->_id = $response->_id ? $response->_id : null;
-        $this->_v = $response->_v ? $response->_v : null;
-        $this->url = $response->url ? $response->url : null;
-        $this->hybridGraph = $response->hybridGraph ? new HybridGraph($response->hybridGraph) : null;
-        $this->openGraph = $response->openGraph ? new OpenGraph($response->openGraph) : null;
-        $this->htmlInferred = $response->htmlInferred ? new HtmlInferred($response->htmlInferred) : null;
-        $this->requestInfo = $response->requestInfo ? new RequestInfo($response->requestInfo) : null;
-        $this->accessed = $response->accessed ? $response->accessed : null;
-        $this->updated = $response->updated ? new DateTime($response->updated) : null;
-        $this->created = $response->created ? new DateTime($response->created) : null;
-        $this->version = $response->version ? $response->version : null;
+        $this->_id = property_exists($response, 'id') ? $response->_id : null;
+        $this->_v = property_exists($response, '_v') ? $response->_v : null;
+        $this->url = property_exists($response, 'url') ? $response->url : null;
+        $this->hybridGraph = property_exists($response, 'hybridGraph')? new HybridGraph($response->hybridGraph) : null;
+        $this->openGraph = property_exists($response, 'openGraph')
+            ? new OpenGraph($response->openGraph) : null;
+        $this->htmlInferred = property_exists($response, 'htmlInferred')
+            ? new HtmlInferred($response->htmlInferred) : null;
+        $this->requestInfo = property_exists($response, 'requestInfo')
+            ? new RequestInfo($response->requestInfo) : null;
+        $this->accessed = property_exists($response, 'accessed') ? $response->accessed : null;
+        $this->updated = property_exists($response, 'updated') ? new DateTime($response->updated) : null;
+        $this->created = property_exists($response, 'created') ? new DateTime($response->created) : null;
+        $this->version = property_exists($response, 'version') ? $response->version : null;
 
         return $this;
     }

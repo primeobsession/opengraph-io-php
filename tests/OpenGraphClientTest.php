@@ -33,7 +33,7 @@ class OpenGraphClientTest extends TestCase
     public function testCacheOKIsTypeOfBoolean()
     {
         try {
-            new OpenGraphClient( 'XXXXXXXXXX', 'false');
+            new OpenGraphClient('XXXXXXXXXX', 'false');
 
             $this->fail("No Exceptions were thrown.");
         } catch(OpenGraphException $openGraphException) {
@@ -44,7 +44,7 @@ class OpenGraphClientTest extends TestCase
     public function testFullRenderIsTypeOfBoolean()
     {
         try {
-            new OpenGraphClient( 'XXXXXXXXXX', false, 'false');
+            new OpenGraphClient('XXXXXXXXXX', false, 'false');
 
             $this->fail("No Exceptions were thrown.");
         } catch(OpenGraphException $openGraphException) {
@@ -55,7 +55,7 @@ class OpenGraphClientTest extends TestCase
     public function testAPIKeyIsTypeOfString()
     {
         try {
-            new OpenGraphClient( 'XXXXXXXXXX', true, true, 1.1);
+            new OpenGraphClient('XXXXXXXXXX', true, true, 1.1);
 
             $this->fail("No Exceptions were thrown.");
         } catch(OpenGraphException $openGraphException) {
@@ -66,7 +66,7 @@ class OpenGraphClientTest extends TestCase
     public function testFormURLIsMatched()
     {
         try {
-            $og = new OpenGraphClient( 'XXXXXXXXXX', true, true, "1.1");
+            $og = new OpenGraphClient('XXXXXXXXXX', true, true, "1.1");
             $this->assertEquals(
                 $og->fetch("https://www.opengraph.io"),
                 "https://opengraph.io/api/1.1/site/https%3A%2F%2Fwww.opengraph.io?cache_ok=true&full_render=true&"
@@ -82,12 +82,12 @@ class OpenGraphClientTest extends TestCase
     public function testAPIKeyIsInvalid()
     {
         try {
-            $og = new OpenGraphClient( '59c287211eb31e457760e00c');
+            $og = new OpenGraphClient('XXXXXXXXXX');
             $og->fetch("https://www.opengraph.io");
 
             $this->fail("No Exceptions were thrown.");
         } catch(OpenGraphException $openGraphException) {
-            $this->assertEquals($openGraphException->getMessage(), "You have provided an invalid API key");
+            $this->assertEquals($openGraphException->getMessage(), "You have provided an invalid API key.");
         } finally {
             unset($og);
         }

@@ -19,7 +19,7 @@ This package is in active development and not discoverable by Composer via [Pack
          "autoload": {
              ...
              "psr-4": {
-                    "OpenGraph\\": "vendor/primeobsession/opengraph-io-php/src/"
+                    "OpenGraph\\": "vendor/primeobsession/opengraph-io-php/src/OpenGraph"
              },
              ...
          },

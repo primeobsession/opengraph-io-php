@@ -71,12 +71,12 @@ class HybridGraph implements Arrayfier
      */
     public function __construct($hybridGraph)
     {
-        $this->title = $hybridGraph->title;
-        $this->description = $hybridGraph->description;
-        $this->type = $hybridGraph->type;
-        $this->url = $hybridGraph->url;
-        $this->favicon = $hybridGraph->favicon;
-        $this->image = $hybridGraph->image;
+        $this->title = property_exists($hybridGraph, 'title') ? $hybridGraph->title : null;
+        $this->description = property_exists($hybridGraph, 'description') ? $hybridGraph->description : null;
+        $this->type = property_exists($hybridGraph, 'type') ? $hybridGraph->type : null;
+        $this->url = property_exists($hybridGraph, 'url') ? $hybridGraph->url : null;
+        $this->favicon = property_exists($hybridGraph, 'favicon') ? $hybridGraph->favicon : null;
+        $this->image = property_exists($hybridGraph, 'image') ? $hybridGraph->image : null;
 
         return $this;
     }

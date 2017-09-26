@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use OpenGraph\OpenGraphClient;
 use OpenGraph\OpenGraphException;
 
-define('OG_API_KEY', '59c287211eb31e457760e00c');
+define('OG_API_KEY', 'XXXXXXXXXX');
 
 try {
     $og = new OpenGraphClient(OG_API_KEY);

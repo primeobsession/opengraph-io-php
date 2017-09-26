@@ -78,14 +78,14 @@ class HtmlInferred implements Arrayfier
      */
     public function __construct($htmlInferred)
     {
-        $this->title = $htmlInferred->title;
-        $this->description = $htmlInferred->description;
-        $this->type = $htmlInferred->type;
-        $this->url = $htmlInferred->url;
-        $this->favicon = $htmlInferred->favicon;
-        $this->site_name = $htmlInferred->site_name;
-        $this->images = $htmlInferred->images;
-        $this->image_guess = $htmlInferred->image_guess;
+        $this->title = property_exists($htmlInferred, 'title') ? $htmlInferred->title : null;
+        $this->description = property_exists($htmlInferred, 'description') ? $htmlInferred->description : null;
+        $this->type = property_exists($htmlInferred, 'type') ? $htmlInferred->type : null;
+        $this->url = property_exists($htmlInferred, 'url') ? $htmlInferred->url : null;
+        $this->favicon = property_exists($htmlInferred, 'favicon') ? $htmlInferred->favicon : null;
+        $this->site_name = property_exists($htmlInferred, 'site_name') ? $htmlInferred->site_name : null;
+        $this->images = property_exists($htmlInferred, 'images') ? $htmlInferred->images : null;
+        $this->image_guess = property_exists($htmlInferred, 'image_guess') ? $htmlInferred->image_guess : null;
 
         return $this;
     }
