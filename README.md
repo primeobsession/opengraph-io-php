@@ -1,6 +1,23 @@
 # [Opengraph.io php](https://github.com/primeobsession/opengraph-io-php)
 
-Opengraph-io-php package is a wrapper on [opengraph.io](https://www.opengraph.io/) API, especially build for modern **PHP** projects which is using [Composer](https://getcomposer.org) as package and dependency management.
+Opengraph-io-php package is a wrapper on [opengraph.io](https://www.opengraph.io/) API, especially built for modern **PHP** projects which is using [Composer](https://getcomposer.org) as package and dependency management.
+
+## Getting Started
+
+[OpenGraph.io](https://www.opengraph.io/) client library for PHP.   Given a URL, the client 
+will make a HTTP request to OpenGraph.io which will scrape the site for OpenGraph tags.  If tags exist the tags will
+be returned to you.  
+
+Often times the appropriate tags will not exist and this is where OpenGraph.io shines.  It will
+infer what the OpenGraph tags probably would be an return them to you as ```hybridGraph```.  
+
+The ```hybridGraph``` results will always default to any OpenGraph tags that were found on the page.  If only some tags
+were found, or none were, the missing tags will be inferred from the content on the page. 
+
+For most uses, the OpenGraph.io API is free. To get a free forever key, signup at [OpenGraph.io](https://www.opengraph.io/).  
+
+If you end up having very heavy useage, the vast majority of projects will
+be totally covered using one of our inexpensive plans.  Dedicated plans are also available upon request.
 
 ## Installation
  
